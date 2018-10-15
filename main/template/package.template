@@ -1,11 +1,11 @@
 #set ( $pack = $PACKAGE_NAME.replace(".","`"))
 BeginPackage["${pack}`${NAME}"]
-debug["begin of ", \$Context, 4];
+debug["begin of ", \$Context, {msg,4}];
 
 Begin["`Private`"]
 
 End[] (* `Private` *)
 
 
-debug["end of ", \$Context, 4];
+debug["end of ", \$Context, {msg,4}];
 EndPackage[]
