@@ -1,4 +1,35 @@
-Notebook[{},
-  PrivateNotebookOptions -> {"FileOutlineCache" -> False},
-  TrackCellChangeTimes -> False
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"SetDirectory", "[", 
+   RowBox[{"NotebookDirectory", "[", "]"}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Get", "[", "\"\<main/core/utils.m\>\"", 
+  "]"}]}], "Input",ExpressionUUID->"9838ec2e-7743-446d-867c-0548002d039f"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Get","noopen",
+   "\"Cannot open \\!\\(\\*RowBox[{\\\"\\\\\\\"core/utils.m\\\\\\\"\\\"}]\\).\
+\"",2,11,2,19835111943101140436,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellLabel->
+  "During evaluation of \
+In[10]:=",ExpressionUUID->"eecf9a94-1122-44c4-9edc-64a2d14256c5"],
+
+Cell[BoxData["$Failed"], "Output",
+ CellLabel->
+  "Out[11]=",ExpressionUUID->"4897b7c2-d538-46b6-89b6-70d9c61b05bc"]
+}, Open  ]]
+},
+WindowSize->{808, 841},
+WindowMargins->{{151, Automatic}, {Automatic, -936}},
+PrivateNotebookOptions->{"FileOutlineCache"->False},
+TrackCellChangeTimes->False,
+FrontEndVersion->"11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
+2018)",
+StyleDefinitions->"Default.nb"
 ]
+

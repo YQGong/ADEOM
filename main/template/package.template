@@ -1,11 +1,18 @@
 #set ( $pack = $PACKAGE_NAME.replace(".","`"))
-BeginPackage["${pack}`${NAME}"]
+BeginPackage["${pack}`${NAME}`"]
 debug["begin of ", \$Context, {msg,4}];
+
+`Private`dependence={};
+
+$ContextPath=Join[$ContextPath,`Private`dependence];
 
 Begin["`Private`"]
 
 End[] (* `Private` *)
 
+Remove/@{};
+
+`Private`isLoaded=True;
 
 debug["end of ", \$Context, {msg,4}];
 EndPackage[]
