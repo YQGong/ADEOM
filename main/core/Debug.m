@@ -1,4 +1,4 @@
-BeginPackage["core`debug`"]
+BeginPackage["core`Debug`"];
 
 SetAttributes[Global`debugf,HoldAll];
 If[!ValueQ[Global`debugf],
@@ -6,15 +6,18 @@ If[!ValueQ[Global`debugf],
     Global`debugf=Print,
     Global`debugf[___]=Null];];
 
+typeList::usage = "typeList[]";
 If[!ValueQ[`typeList],
   `typeList={"msg","val"}];
 
 If[!ValueQ[Global`$verbose],
   Global`$verbose=Association @@ (# -> 0 & /@ `typeList);];
 
+debug::usage = "debug[]";
 SetAttributes[debug,HoldAll];
 debug[msg__,level_List]:=If[Global`$verbose[[1]]>=level[[2]],Global`debugf[msg]];
 
+debugset::usage = "debugset[]";
 SetAttributes[debugset,HoldAll];
 debugset[vars__,level_List]:=
   Do[debug[StringTake[ToString[var],{6,-2}]<>" is "<>ReleaseHold[var],level]
@@ -22,4 +25,4 @@ debugset[vars__,level_List]:=
 
 Remove/@{level,msg, var, vars};
 
-EndPackage[]
+EndPackage[];

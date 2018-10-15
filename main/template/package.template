@@ -1,18 +1,24 @@
 #set ( $pack = $PACKAGE_NAME.replace(".","`"))
-BeginPackage["${pack}`${NAME}`"]
-debug["begin of ", \$Context, {msg,4}];
+BeginPackage["${pack}`${NAME}`"];
+If[ToExpression["${pack}`${NAME}`Private`isLoaded"]===True,Goto[`Private`end]];
 
-`Private`dependence={};
+(*dependencies of this module*)
+`Private`dependence={"core`Utils`","core`Debug`"};
 
-$ContextPath=Join[$ContextPath,`Private`dependence];
+core`Src`loadDependencies[`Private`dependence];
 
-Begin["`Private`"]
+debug["begin of ",\$Context,{"msg",4}];
 
-End[] (* `Private` *)
+(*enter code here*)
 
+
+
+
+(*local variables to be removed*)
 Remove/@{};
 
 `Private`isLoaded=True;
 
-debug["end of ", \$Context, {msg,4}];
-EndPackage[]
+debug["end of ",\$Context,{"msg",4}];
+Label[`Private`end];
+EndPackage[];

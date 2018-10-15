@@ -1,31 +1,187 @@
 Notebook[{
-
-Cell[CellGroupData[{
-Cell[BoxData[{
- RowBox[{
-  RowBox[{"SetDirectory", "[", 
-   RowBox[{"NotebookDirectory", "[", "]"}], "]"}], 
-  ";"}], "\[IndentingNewLine]", 
- RowBox[{"Get", "[", "\"\<main/core/utils.m\>\"", 
-  "]"}]}], "Input",ExpressionUUID->"9838ec2e-7743-446d-867c-0548002d039f"],
+Cell[BoxData["Quit"], "Input",
+ CellLabel->"In[8]:=",ExpressionUUID->"fab30114-09d8-4a2d-94d6-1a6fea68f64d"],
 
 Cell[BoxData[
- TemplateBox[{
-  "Get","noopen",
-   "\"Cannot open \\!\\(\\*RowBox[{\\\"\\\\\\\"core/utils.m\\\\\\\"\\\"}]\\).\
-\"",2,11,2,19835111943101140436,"Local"},
-  "MessageTemplate"]], "Message", "MSG",
+ RowBox[{
+  RowBox[{"SetDirectory", "[", 
+   RowBox[{"NotebookDirectory", "[", "]"}], "]"}], ";"}]], "Input",
+ InitializationCell->True,
+ CellLabel->"In[1]:=",ExpressionUUID->"9838ec2e-7743-446d-867c-0548002d039f"],
+
+Cell[CellGroupData[{
+
+Cell["testInit", \
+"Title",ExpressionUUID->"974a9756-7c2c-4e7d-ab2a-1109c9134510"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"$verbose", "=", 
+   RowBox[{"<|", 
+    RowBox[{
+     RowBox[{"\"\<msg\>\"", "\[Rule]", "10"}], ",", 
+     RowBox[{"\"\<val\>\"", "\[Rule]", "10"}], ",", 
+     RowBox[{"\"\<user\>\"", "\[Rule]", "10"}]}], "|>"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Get", "[", "\"\<ADEOM.m\>\"", "]"}]}], "Input",
+ InitializationCell->True,
+ CellLabel->"In[2]:=",ExpressionUUID->"38497b31-96da-4df4-b13e-70ef8ba5be39"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Names Check", \
+"Title",ExpressionUUID->"ff5463cf-ee8e-4349-810c-8447ae3a96b1"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"core`Src`loadSrc", "[", "$PackageDir", "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"core`Src`import", "[", 
+    RowBox[{
+    "\"\<test\>\"", ",", "\"\<test\>\"", ",", "\"\<utils\>\"", ",", 
+     "\"\<NamesCheck.m\>\""}], "]"}], ";"}], "\[IndentingNewLine]"}], "\n", 
+ RowBox[{
+  RowBox[{"packages", "=", 
+   RowBox[{"{", 
+    RowBox[{
+    "\"\<ADEOM`\>\"", ",", "\"\<core`Init\>\"", ",", "\"\<core`Debug\>\"", 
+     ",", "\"\<core`Utils\>\"", ",", "\"\<core`Src\>\"", ",", 
+     "\"\<test`utils`NamesCheck\>\""}], "}"}]}], ";"}], "\n", 
+ RowBox[{"test`utils`NamesCheck`contextNamesCheck", "/@", 
+  "packages"}]}], "Input",
+ CellLabel->"In[4]:=",ExpressionUUID->"f95522b3-7405-4aa6-b10d-d7ec2719bafc"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"loaded src : \\n\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"/Users/yinqianggong/IdeaProjects/ADEOM/ADEOM.m\\n/Users/yinqianggong/\
+IdeaProjects/ADEOM/main/core/Debug.m\\n/Users/yinqianggong/IdeaProjects/ADEOM/\
+main/core/Init.m\\n/Users/yinqianggong/IdeaProjects/ADEOM/main/core/Src.m\\n/\
+Users/yinqianggong/IdeaProjects/ADEOM/main/core/Utils.m\\n/Users/yinqianggong/\
+IdeaProjects/ADEOM/test/test/utils/NamesCheck.m\"\>"}],
+  SequenceForm[
+  "loaded src : \n", 
+   "/Users/yinqianggong/IdeaProjects/ADEOM/ADEOM.m\n\
+/Users/yinqianggong/IdeaProjects/ADEOM/main/core/Debug.m\n\
+/Users/yinqianggong/IdeaProjects/ADEOM/main/core/Init.m\n\
+/Users/yinqianggong/IdeaProjects/ADEOM/main/core/Src.m\n\
+/Users/yinqianggong/IdeaProjects/ADEOM/main/core/Utils.m\n\
+/Users/yinqianggong/IdeaProjects/ADEOM/test/test/utils/NamesCheck.m"],
+  Editable->False]], "Print",
  CellLabel->
   "During evaluation of \
-In[10]:=",ExpressionUUID->"eecf9a94-1122-44c4-9edc-64a2d14256c5"],
+In[4]:=",ExpressionUUID->"43caf9b0-dbf8-439f-8d5e-4030c40dfcff"],
 
-Cell[BoxData["$Failed"], "Output",
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"importing src : \"\>", 
+   "\[InvisibleSpace]", \
+"\<\"/Users/yinqianggong/IdeaProjects/ADEOM/test/test/utils/NamesCheck.m\"\>"}\
+],
+  SequenceForm[
+  "importing src : ", 
+   "/Users/yinqianggong/IdeaProjects/ADEOM/test/test/utils/NamesCheck.m"],
+  Editable->False]], "Print",
  CellLabel->
-  "Out[11]=",ExpressionUUID->"4897b7c2-d538-46b6-89b6-70d9c61b05bc"]
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"9db0f8ea-fa60-4ba2-a52c-8039aa66b519"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"importing test`utils`NamesCheck` 's dependency : \"\>", 
+   "\[InvisibleSpace]", "\<\"core`Utils`\"\>"}],
+  SequenceForm[
+  "importing test`utils`NamesCheck` 's dependency : ", "core`Utils`"],
+  Editable->False]], "Print",
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"55a6ea44-c8f7-47a3-a68a-c4b57736c5fe"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"importing src : \"\>", 
+   "\[InvisibleSpace]", \
+"\<\"/Users/yinqianggong/IdeaProjects/ADEOM/main/core/Utils.m\"\>"}],
+  SequenceForm[
+  "importing src : ", 
+   "/Users/yinqianggong/IdeaProjects/ADEOM/main/core/Utils.m"],
+  Editable->False]], "Print",
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"5b00a38a-23fb-4012-a8f6-894288c41d28"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"importing test`utils`NamesCheck` 's dependency : \"\>", 
+   "\[InvisibleSpace]", "\<\"core`Debug`\"\>"}],
+  SequenceForm[
+  "importing test`utils`NamesCheck` 's dependency : ", "core`Debug`"],
+  Editable->False]], "Print",
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"a8189aa6-fcc9-4079-b647-09b019a4fca9"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"importing src : \"\>", 
+   "\[InvisibleSpace]", \
+"\<\"/Users/yinqianggong/IdeaProjects/ADEOM/main/core/Debug.m\"\>"}],
+  SequenceForm[
+  "importing src : ", 
+   "/Users/yinqianggong/IdeaProjects/ADEOM/main/core/Debug.m"],
+  Editable->False]], "Print",
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"47cbba5c-84b7-4a3b-9458-68b8c70e95ac"],
+
+Cell[BoxData["\<\"\"\>"], "Print",
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"e034c74b-711d-4323-ac46-4a56d10b5230"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"begin of \"\>", 
+   "\[InvisibleSpace]", "\<\"test`utils`NamesCheck`\"\>"}],
+  SequenceForm["begin of ", "test`utils`NamesCheck`"],
+  Editable->False]], "Print",
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"269cc09e-2ea9-430f-892d-ead36a250a9f"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"end of \"\>", 
+   "\[InvisibleSpace]", "\<\"test`utils`NamesCheck`\"\>"}],
+  SequenceForm["end of ", "test`utils`NamesCheck`"],
+  Editable->False]], "Print",
+ CellLabel->
+  "During evaluation of \
+In[4]:=",ExpressionUUID->"3ba1f40a-f7a2-4c15-a0cf-10a3bea56472"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", "}"}], ",", 
+   RowBox[{"{", "}"}], ",", 
+   RowBox[{"{", "}"}], ",", 
+   RowBox[{"{", "}"}], ",", 
+   RowBox[{"{", "}"}], ",", 
+   RowBox[{"{", "}"}]}], "}"}]], "Output",
+ CellLabel->"Out[7]=",ExpressionUUID->"88e08aa3-674e-44cc-a055-4b9c803c4054"]
+}, Open  ]]
 }, Open  ]]
 },
 WindowSize->{808, 841},
-WindowMargins->{{151, Automatic}, {Automatic, -936}},
+WindowMargins->{{29, Automatic}, {Automatic, -1018}},
 PrivateNotebookOptions->{"FileOutlineCache"->False},
 TrackCellChangeTimes->False,
 FrontEndVersion->"11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
