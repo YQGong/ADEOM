@@ -1,6 +1,26 @@
 Notebook[{
 Cell[BoxData["Quit"], "Input",
- CellLabel->"In[8]:=",ExpressionUUID->"fab30114-09d8-4a2d-94d6-1a6fea68f64d"],
+ CellLabel->
+  "In[120]:=",ExpressionUUID->"fab30114-09d8-4a2d-94d6-1a6fea68f64d"],
+
+Cell["\<\
+v0.1 done:
+distributed src load.
+debug module
+init module
+template design
+moduleVariableQ
+
+todo:
+default parameter and massive parameter module
+test module
+add test cases
+scan module
+data process module
+
+defer:
+debug add line number.\
+\>", "Text",ExpressionUUID->"f51d71a4-e9bc-4f5f-a09d-a6ac0f7e4da5"],
 
 Cell[BoxData[
  RowBox[{
@@ -25,7 +45,17 @@ Cell[BoxData[{
   ";"}], "\[IndentingNewLine]", 
  RowBox[{"Get", "[", "\"\<ADEOM.m\>\"", "]"}]}], "Input",
  InitializationCell->True,
- CellLabel->"In[2]:=",ExpressionUUID->"38497b31-96da-4df4-b13e-70ef8ba5be39"]
+ CellLabel->"In[16]:=",ExpressionUUID->"38497b31-96da-4df4-b13e-70ef8ba5be39"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["$Context"], "Input",
+ CellLabel->"In[10]:=",ExpressionUUID->"0e91cf43-8a64-4cf6-a5a2-ace7ecfd18e6"],
+
+Cell[BoxData["\<\"core`Init`\"\>"], "Output",
+ CellLabel->
+  "Out[10]=",ExpressionUUID->"ea09d82e-79b1-4db9-bc1a-2eafc8a1f08a"]
+}, Open  ]]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -53,7 +83,7 @@ Cell[BoxData[{
      "\"\<test`utils`NamesCheck\>\""}], "}"}]}], ";"}], "\n", 
  RowBox[{"test`utils`NamesCheck`contextNamesCheck", "/@", 
   "packages"}]}], "Input",
- CellLabel->"In[4]:=",ExpressionUUID->"f95522b3-7405-4aa6-b10d-d7ec2719bafc"],
+ CellLabel->"In[18]:=",ExpressionUUID->"f95522b3-7405-4aa6-b10d-d7ec2719bafc"],
 
 Cell[CellGroupData[{
 
@@ -77,7 +107,7 @@ IdeaProjects/ADEOM/test/test/utils/NamesCheck.m\"\>"}],
   Editable->False]], "Print",
  CellLabel->
   "During evaluation of \
-In[4]:=",ExpressionUUID->"43caf9b0-dbf8-439f-8d5e-4030c40dfcff"],
+In[18]:=",ExpressionUUID->"6b7fb0af-24a7-490d-b67d-14b8e628f898"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -91,60 +121,33 @@ Cell[BoxData[
   Editable->False]], "Print",
  CellLabel->
   "During evaluation of \
-In[4]:=",ExpressionUUID->"9db0f8ea-fa60-4ba2-a52c-8039aa66b519"],
+In[18]:=",ExpressionUUID->"2f21f98e-8858-4748-8bad-68c7b81231e7"],
 
 Cell[BoxData[
  InterpretationBox[
-  RowBox[{"\<\"importing test`utils`NamesCheck` 's dependency : \"\>", 
-   "\[InvisibleSpace]", "\<\"core`Utils`\"\>"}],
+  RowBox[{"\<\"test`utils`NamesCheck` 's dependency \"\>", 
+   "\[InvisibleSpace]", "\<\"core`Utils`\"\>", 
+   "\[InvisibleSpace]", "\<\"is already loaded.\"\>"}],
   SequenceForm[
-  "importing test`utils`NamesCheck` 's dependency : ", "core`Utils`"],
+  "test`utils`NamesCheck` 's dependency ", "core`Utils`", 
+   "is already loaded."],
   Editable->False]], "Print",
  CellLabel->
   "During evaluation of \
-In[4]:=",ExpressionUUID->"55a6ea44-c8f7-47a3-a68a-c4b57736c5fe"],
+In[18]:=",ExpressionUUID->"6853af88-a5ec-4561-85d3-4f0dd0686589"],
 
 Cell[BoxData[
  InterpretationBox[
-  RowBox[{"\<\"importing src : \"\>", 
-   "\[InvisibleSpace]", \
-"\<\"/Users/yinqianggong/IdeaProjects/ADEOM/main/core/Utils.m\"\>"}],
+  RowBox[{"\<\"test`utils`NamesCheck` 's dependency \"\>", 
+   "\[InvisibleSpace]", "\<\"core`Debug`\"\>", 
+   "\[InvisibleSpace]", "\<\"is already loaded.\"\>"}],
   SequenceForm[
-  "importing src : ", 
-   "/Users/yinqianggong/IdeaProjects/ADEOM/main/core/Utils.m"],
+  "test`utils`NamesCheck` 's dependency ", "core`Debug`", 
+   "is already loaded."],
   Editable->False]], "Print",
  CellLabel->
   "During evaluation of \
-In[4]:=",ExpressionUUID->"5b00a38a-23fb-4012-a8f6-894288c41d28"],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\<\"importing test`utils`NamesCheck` 's dependency : \"\>", 
-   "\[InvisibleSpace]", "\<\"core`Debug`\"\>"}],
-  SequenceForm[
-  "importing test`utils`NamesCheck` 's dependency : ", "core`Debug`"],
-  Editable->False]], "Print",
- CellLabel->
-  "During evaluation of \
-In[4]:=",ExpressionUUID->"a8189aa6-fcc9-4079-b647-09b019a4fca9"],
-
-Cell[BoxData[
- InterpretationBox[
-  RowBox[{"\<\"importing src : \"\>", 
-   "\[InvisibleSpace]", \
-"\<\"/Users/yinqianggong/IdeaProjects/ADEOM/main/core/Debug.m\"\>"}],
-  SequenceForm[
-  "importing src : ", 
-   "/Users/yinqianggong/IdeaProjects/ADEOM/main/core/Debug.m"],
-  Editable->False]], "Print",
- CellLabel->
-  "During evaluation of \
-In[4]:=",ExpressionUUID->"47cbba5c-84b7-4a3b-9458-68b8c70e95ac"],
-
-Cell[BoxData["\<\"\"\>"], "Print",
- CellLabel->
-  "During evaluation of \
-In[4]:=",ExpressionUUID->"e034c74b-711d-4323-ac46-4a56d10b5230"],
+In[18]:=",ExpressionUUID->"dc1be43a-a8f0-4091-b136-e42661b0d10a"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -154,7 +157,7 @@ Cell[BoxData[
   Editable->False]], "Print",
  CellLabel->
   "During evaluation of \
-In[4]:=",ExpressionUUID->"269cc09e-2ea9-430f-892d-ead36a250a9f"],
+In[18]:=",ExpressionUUID->"948966ae-86de-4b5e-a2b6-8da7a861de6f"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -164,7 +167,7 @@ Cell[BoxData[
   Editable->False]], "Print",
  CellLabel->
   "During evaluation of \
-In[4]:=",ExpressionUUID->"3ba1f40a-f7a2-4c15-a0cf-10a3bea56472"]
+In[18]:=",ExpressionUUID->"2dd8f785-2d2b-4cf5-94e1-c93410dd3478"]
 }, Open  ]],
 
 Cell[BoxData[
@@ -176,12 +179,13 @@ Cell[BoxData[
    RowBox[{"{", "}"}], ",", 
    RowBox[{"{", "}"}], ",", 
    RowBox[{"{", "}"}]}], "}"}]], "Output",
- CellLabel->"Out[7]=",ExpressionUUID->"88e08aa3-674e-44cc-a055-4b9c803c4054"]
+ CellLabel->
+  "Out[21]=",ExpressionUUID->"d7500d2d-b35b-4c9d-b606-d72592f2e99f"]
 }, Open  ]]
 }, Open  ]]
 },
 WindowSize->{808, 841},
-WindowMargins->{{29, Automatic}, {Automatic, -1018}},
+WindowMargins->{{0, Automatic}, {Automatic, -1031}},
 PrivateNotebookOptions->{"FileOutlineCache"->False},
 TrackCellChangeTimes->False,
 FrontEndVersion->"11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \

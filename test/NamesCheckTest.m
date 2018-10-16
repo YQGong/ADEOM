@@ -1,0 +1,7 @@
+Assert[moduleVariableQ["test$123"]]
+Assert[! moduleVariableQ["test$12a"]]
+Assert[! moduleVariableQ["test$12*12"]]
+Assert[moduleVariableQ["te$st$123"]]
+Assert[! moduleVariableQ["te$st$12*12"]]
+Assert[! moduleVariableQ["$te$st$1212"]]
+Assert[! test`utils`NamesCheck`Private`moduleVariableQ[""]]

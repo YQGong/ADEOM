@@ -10,4 +10,6 @@ freeze[vars_, exp_] :=
     (vars = Reap[Sow[vars]; exp][[2, 1, 1]])
 
 Remove/@{vars,exp};
+
+`Private`isLoaded=True;
 EndPackage[];

@@ -1,5 +1,4 @@
 BeginPackage["core`Src`"];
-If[ToExpression["core`Src`Private`isLoaded"]===True,Goto[`Private`end]];
 
 (*dependencies of this module*)
 `Private`dependence={"core`Utils`","core`Debug`"};
@@ -38,14 +37,16 @@ importFreeze[names__]:=With[
 
 loadDependencies::usage = "loadDependencies[]";
 loadDependencies[deps_List]:=Do[
-  With[{path=Prepend[StringSplit[StringReplacePart[dep,".m",{-1,-1}],"`"],"main"]},
-    debug["importing "<>$Context<>" 's dependency : ",dep,{"msg",7}];
-    import[Sequence@@path];
-  ],{dep,deps}];
+  If[ToExpression[dep<>"Private`isLoaded"]=!=True,
+    With[{path=Prepend[StringSplit[StringReplacePart[dep,".m",{-1,-1}],"`"],"main"]},
+      debug["importing "<>$Context<>" 's dependency : ",dep,{"msg",7}];
+      import[Sequence@@path];];,
+    debug[$Context<>" 's dependency ",dep,"is already loaded.",{"msg",7}];
+    AppendTo[$ContextPath,dep]];
+  ,{dep,deps}];
 
 (*local variables to be removed*)
 Remove/@{dir,i,name,names,path,pattern,dep,deps};
 
 `Private`isLoaded=True;
-Label[`Private`end];
 EndPackage[];

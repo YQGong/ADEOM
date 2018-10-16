@@ -25,4 +25,5 @@ debugset[vars__,level_List]:=
 
 Remove/@{level,msg, var, vars};
 
+`Private`isLoaded=True;
 EndPackage[];
