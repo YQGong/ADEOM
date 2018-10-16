@@ -1,6 +1,6 @@
 BeginPackage["ADEOM`"];
 
-core`debug`typeList={"msg","val","usr"};
+core`debug`typeList={"msg","val","usr","core"};
 DistributeDefinitions[core`debug`typeList];
 
 (*Print[core`debug`typeList];*)

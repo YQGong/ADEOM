@@ -1,29 +1,51 @@
 BeginPackage["core`Debug`"];
 
+Begin["`Private`"]
+
+`defaultDebugLevel=0;
+`defaultDebugf=Print;
+`defaultComputeDebugf=Null;
+`defaultTypeList={"msg","val","core"};
+
+End[]
+
 SetAttributes[Global`debugf,HoldAll];
 If[!ValueQ[Global`debugf],
   If[$KernelID===0,
-    Global`debugf=Print,
-    Global`debugf[___]=Null];];
+    Global`debugf=`Private`defaultDebugf,
+    Global`debugf[___]=`Private`defaultComputeDebugf];];
+
 
 typeList::usage = "typeList[]";
 If[!ValueQ[`typeList],
-  `typeList={"msg","val"}];
+  `typeList=`Private`defaultTypeList,
+  `typeList=Union[`typeList,`Private`defaultTypeList];
+];
+
+
+`Private`mergeAssociations[default_,current_]:=KeySort[Merge[{default, current}, Last]];
+`Private`defaultAssociation=Association @@ (# -> `Private`defaultDebugLevel & /@ `typeList);
 
 If[!ValueQ[Global`$verbose],
-  Global`$verbose=Association @@ (# -> 0 & /@ `typeList);];
+  Global`$verbose=`Private`defaultAssociation,
+  Global`$verbose=`Private`mergeAssociations[`Private`defaultAssociation,Global`$verbose];
+];
+
 
 debug::usage = "debug[]";
 SetAttributes[debug,HoldAll];
-debug[msg__,level_List]:=If[Global`$verbose[[1]]>=level[[2]],Global`debugf[msg]];
+debug[msg__,level_List]:=If[Global`$verbose[level[[1]]]>=level[[2]],Global`debugf[msg]];
 
 debugset::usage = "debugset[]";
 SetAttributes[debugset,HoldAll];
 debugset[vars__,level_List]:=
-  Do[debug[StringTake[ToString[var],{6,-2}]<>" is "<>ReleaseHold[var],level]
+  Do[debug[StringTake[ToString[var],{6,-2}]<>" is "<>ToString[ReleaseHold[var]],level]
     ,{var,Map[Hold,Hold[{vars}],2][[1,1]]}];
 
-Remove/@{level,msg, var, vars};
+
+debug["$verbose is set to ",Global`$verbose,{"core",5}];
+
+Remove/@{level,msg, var, vars,current,default};
 
 `Private`isLoaded=True;
 EndPackage[];
