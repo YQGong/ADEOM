@@ -1,7 +1,6 @@
 Notebook[{
 Cell[BoxData["Quit"], "Input",
- CellLabel->
-  "In[120]:=",ExpressionUUID->"fab30114-09d8-4a2d-94d6-1a6fea68f64d"],
+ CellLabel->"In[34]:=",ExpressionUUID->"fab30114-09d8-4a2d-94d6-1a6fea68f64d"],
 
 Cell["\<\
 v0.1 done:
@@ -34,6 +33,8 @@ Cell[CellGroupData[{
 Cell["testInit", \
 "Title",ExpressionUUID->"974a9756-7c2c-4e7d-ab2a-1109c9134510"],
 
+Cell[CellGroupData[{
+
 Cell[BoxData[{
  RowBox[{
   RowBox[{"$verbose", "=", 
@@ -41,20 +42,36 @@ Cell[BoxData[{
     RowBox[{
      RowBox[{"\"\<msg\>\"", "\[Rule]", "10"}], ",", 
      RowBox[{"\"\<val\>\"", "\[Rule]", "10"}], ",", 
-     RowBox[{"\"\<user\>\"", "\[Rule]", "10"}]}], "|>"}]}], 
+     RowBox[{"\"\<user\>\"", "\[Rule]", "10"}], ",", 
+     RowBox[{"\"\<core\>\"", "\[Rule]", "10"}]}], "|>"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"$verbose", "=", 
+   RowBox[{"<|", 
+    RowBox[{
+     RowBox[{"\"\<msg\>\"", "\[Rule]", "10"}], ",", 
+     RowBox[{"\"\<user\>\"", "\[Rule]", "10"}], ",", 
+     RowBox[{"\"\<core\>\"", "\[Rule]", "10"}]}], "|>"}]}], 
   ";"}], "\[IndentingNewLine]", 
  RowBox[{"Get", "[", "\"\<ADEOM.m\>\"", "]"}]}], "Input",
  InitializationCell->True,
- CellLabel->"In[16]:=",ExpressionUUID->"38497b31-96da-4df4-b13e-70ef8ba5be39"],
+ CellLabel->"In[18]:=",ExpressionUUID->"38497b31-96da-4df4-b13e-70ef8ba5be39"],
 
-Cell[CellGroupData[{
-
-Cell[BoxData["$Context"], "Input",
- CellLabel->"In[10]:=",ExpressionUUID->"0e91cf43-8a64-4cf6-a5a2-ace7ecfd18e6"],
-
-Cell[BoxData["\<\"core`Init`\"\>"], "Output",
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"$verbose is set to \"\>", "\[InvisibleSpace]", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"core\"\>", "\[Rule]", "10"}], ",", 
+     RowBox[{"\<\"msg\"\>", "\[Rule]", "10"}], ",", 
+     RowBox[{"\<\"user\"\>", "\[Rule]", "10"}], ",", 
+     RowBox[{"\<\"val\"\>", "\[Rule]", "0"}]}], "\[RightAssociation]"}]}],
+  SequenceForm["$verbose is set to ", 
+   Association["core" -> 10, "msg" -> 10, "user" -> 10, "val" -> 0]],
+  Editable->False]], "Print",
  CellLabel->
-  "Out[10]=",ExpressionUUID->"ea09d82e-79b1-4db9-bc1a-2eafc8a1f08a"]
+  "During evaluation of \
+In[18]:=",ExpressionUUID->"7d5ff42e-b54e-424b-9c20-7250247dff82"]
 }, Open  ]]
 }, Open  ]],
 
@@ -81,9 +98,28 @@ Cell[BoxData[{
     "\"\<ADEOM`\>\"", ",", "\"\<core`Init\>\"", ",", "\"\<core`Debug\>\"", 
      ",", "\"\<core`Utils\>\"", ",", "\"\<core`Src\>\"", ",", 
      "\"\<test`utils`NamesCheck\>\""}], "}"}]}], ";"}], "\n", 
- RowBox[{"test`utils`NamesCheck`contextNamesCheck", "/@", 
-  "packages"}]}], "Input",
- CellLabel->"In[18]:=",ExpressionUUID->"f95522b3-7405-4aa6-b10d-d7ec2719bafc"],
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"#", ",", 
+      RowBox[{"test`utils`NamesCheck`contextNamesCheck", "@", "#"}]}], "}"}], 
+    "&"}], "/@", "packages"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{"#", "===", 
+      RowBox[{"{", "}"}]}], ",", "\"\<Local variables are clear.\>\"", ",", 
+     "#"}], "]"}], "&"}], "[", 
+  RowBox[{"(", 
+   RowBox[{"%", "/.", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"_", ",", 
+       RowBox[{"{", "}"}]}], "}"}], "\[Rule]", "Nothing"}]}], ")"}], 
+  "]"}]}], "Input",
+ CellLabel->"In[31]:=",ExpressionUUID->"f95522b3-7405-4aa6-b10d-d7ec2719bafc"],
 
 Cell[CellGroupData[{
 
@@ -95,7 +131,8 @@ Cell[BoxData[
 IdeaProjects/ADEOM/main/core/Debug.m\\n/Users/yinqianggong/IdeaProjects/ADEOM/\
 main/core/Init.m\\n/Users/yinqianggong/IdeaProjects/ADEOM/main/core/Src.m\\n/\
 Users/yinqianggong/IdeaProjects/ADEOM/main/core/Utils.m\\n/Users/yinqianggong/\
-IdeaProjects/ADEOM/test/test/utils/NamesCheck.m\"\>"}],
+IdeaProjects/ADEOM/test/NamesCheckTest.m\\n/Users/yinqianggong/IdeaProjects/\
+ADEOM/test/test/utils/NamesCheck.m\"\>"}],
   SequenceForm[
   "loaded src : \n", 
    "/Users/yinqianggong/IdeaProjects/ADEOM/ADEOM.m\n\
@@ -103,11 +140,12 @@ IdeaProjects/ADEOM/test/test/utils/NamesCheck.m\"\>"}],
 /Users/yinqianggong/IdeaProjects/ADEOM/main/core/Init.m\n\
 /Users/yinqianggong/IdeaProjects/ADEOM/main/core/Src.m\n\
 /Users/yinqianggong/IdeaProjects/ADEOM/main/core/Utils.m\n\
+/Users/yinqianggong/IdeaProjects/ADEOM/test/NamesCheckTest.m\n\
 /Users/yinqianggong/IdeaProjects/ADEOM/test/test/utils/NamesCheck.m"],
   Editable->False]], "Print",
  CellLabel->
   "During evaluation of \
-In[18]:=",ExpressionUUID->"6b7fb0af-24a7-490d-b67d-14b8e628f898"],
+In[31]:=",ExpressionUUID->"dcd1184a-c365-43e0-8256-e9eecaeb4252"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -121,7 +159,13 @@ Cell[BoxData[
   Editable->False]], "Print",
  CellLabel->
   "During evaluation of \
-In[18]:=",ExpressionUUID->"2f21f98e-8858-4748-8bad-68c7b81231e7"],
+In[31]:=",ExpressionUUID->"a991d474-3a39-4179-ad42-c7b97f97951a"],
+
+Cell[BoxData["\<\"core`Src`filename$31167 is \
+test/test/utils/NamesCheck.m\"\>"], "Print",
+ CellLabel->
+  "During evaluation of \
+In[31]:=",ExpressionUUID->"fb2b6c08-5fe8-4acb-b5d5-32cea8f52fb2"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -134,7 +178,7 @@ Cell[BoxData[
   Editable->False]], "Print",
  CellLabel->
   "During evaluation of \
-In[18]:=",ExpressionUUID->"6853af88-a5ec-4561-85d3-4f0dd0686589"],
+In[31]:=",ExpressionUUID->"9cc3485c-9ce7-4050-ad27-59bcabaf60ee"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -147,45 +191,43 @@ Cell[BoxData[
   Editable->False]], "Print",
  CellLabel->
   "During evaluation of \
-In[18]:=",ExpressionUUID->"dc1be43a-a8f0-4091-b136-e42661b0d10a"],
+In[31]:=",ExpressionUUID->"3270185b-bcc3-40ab-ba02-0bf8a7b37b3b"],
 
 Cell[BoxData[
  InterpretationBox[
-  RowBox[{"\<\"begin of \"\>", 
+  RowBox[{"\<\"file: test/test/utils/NamesCheck.m, line: 8, \"\>", 
+   "\[InvisibleSpace]", "\<\"begin of \"\>", 
    "\[InvisibleSpace]", "\<\"test`utils`NamesCheck`\"\>"}],
-  SequenceForm["begin of ", "test`utils`NamesCheck`"],
+  SequenceForm[
+  "file: test/test/utils/NamesCheck.m, line: 8, ", "begin of ", 
+   "test`utils`NamesCheck`"],
   Editable->False]], "Print",
  CellLabel->
   "During evaluation of \
-In[18]:=",ExpressionUUID->"948966ae-86de-4b5e-a2b6-8da7a861de6f"],
+In[31]:=",ExpressionUUID->"8ea1d0ee-f824-4db1-8105-b7abca27d6e4"],
 
 Cell[BoxData[
  InterpretationBox[
-  RowBox[{"\<\"end of \"\>", 
+  RowBox[{"\<\"file: test/test/utils/NamesCheck.m, line: 33, \"\>", 
+   "\[InvisibleSpace]", "\<\"end of \"\>", 
    "\[InvisibleSpace]", "\<\"test`utils`NamesCheck`\"\>"}],
-  SequenceForm["end of ", "test`utils`NamesCheck`"],
+  SequenceForm[
+  "file: test/test/utils/NamesCheck.m, line: 33, ", "end of ", 
+   "test`utils`NamesCheck`"],
   Editable->False]], "Print",
  CellLabel->
   "During evaluation of \
-In[18]:=",ExpressionUUID->"2dd8f785-2d2b-4cf5-94e1-c93410dd3478"]
+In[31]:=",ExpressionUUID->"660600bc-10a8-4e23-800d-0f973e32c73b"]
 }, Open  ]],
 
-Cell[BoxData[
- RowBox[{"{", 
-  RowBox[{
-   RowBox[{"{", "}"}], ",", 
-   RowBox[{"{", "}"}], ",", 
-   RowBox[{"{", "}"}], ",", 
-   RowBox[{"{", "}"}], ",", 
-   RowBox[{"{", "}"}], ",", 
-   RowBox[{"{", "}"}]}], "}"}]], "Output",
+Cell[BoxData["\<\"Local variables are clear.\"\>"], "Output",
  CellLabel->
-  "Out[21]=",ExpressionUUID->"d7500d2d-b35b-4c9d-b606-d72592f2e99f"]
+  "Out[35]=",ExpressionUUID->"c4edcd1a-3707-4ebf-aec3-fd6ad322b12b"]
 }, Open  ]]
 }, Open  ]]
 },
 WindowSize->{808, 841},
-WindowMargins->{{0, Automatic}, {Automatic, -1031}},
+WindowMargins->{{0, Automatic}, {Automatic, 39}},
 PrivateNotebookOptions->{"FileOutlineCache"->False},
 TrackCellChangeTimes->False,
 FrontEndVersion->"11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
