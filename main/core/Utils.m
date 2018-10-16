@@ -2,7 +2,7 @@ BeginPackage["core`Utils`"];
 
 paraEval::usage = "paraEval[]";
 SetAttributes[paraEval, HoldAll];
-paraEval[exp_] := (Prepend[ParallelEvaluate[exp],Evaluate[exp]];);
+paraEval[exp_] := (Prepend[ParallelEvaluate[exp],Evaluate[exp]]);
 
 freeze::usage = "freeze[]";
 SetAttributes[freeze, HoldAll];

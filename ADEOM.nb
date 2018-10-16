@@ -1,24 +1,27 @@
 Notebook[{
 Cell[BoxData["Quit"], "Input",
- CellLabel->"In[34]:=",ExpressionUUID->"fab30114-09d8-4a2d-94d6-1a6fea68f64d"],
+ CellLabel->"In[17]:=",ExpressionUUID->"fab30114-09d8-4a2d-94d6-1a6fea68f64d"],
 
 Cell["\<\
-v0.1 done:
-distributed src load.
-debug module
-init module
-template design
-moduleVariableQ
+v0.2 done
+debug add line number.
+modify debug setting  part
 
 todo:
 default parameter and massive parameter module
 test module
 add test cases
-scan module
+listgen module & scan module
 data process module
 
 defer:
-debug add line number.\
+
+v0.1 done:
+distributed src load.
+debug module
+init module
+template design
+moduleVariableQ\
 \>", "Text",ExpressionUUID->"f51d71a4-e9bc-4f5f-a09d-a6ac0f7e4da5"],
 
 Cell[BoxData[
@@ -30,8 +33,7 @@ Cell[BoxData[
 
 Cell[CellGroupData[{
 
-Cell["testInit", \
-"Title",ExpressionUUID->"974a9756-7c2c-4e7d-ab2a-1109c9134510"],
+Cell["Init", "Title",ExpressionUUID->"974a9756-7c2c-4e7d-ab2a-1109c9134510"],
 
 Cell[CellGroupData[{
 
@@ -41,21 +43,20 @@ Cell[BoxData[{
    RowBox[{"<|", 
     RowBox[{
      RowBox[{"\"\<msg\>\"", "\[Rule]", "10"}], ",", 
-     RowBox[{"\"\<val\>\"", "\[Rule]", "10"}], ",", 
      RowBox[{"\"\<user\>\"", "\[Rule]", "10"}], ",", 
      RowBox[{"\"\<core\>\"", "\[Rule]", "10"}]}], "|>"}]}], 
   ";"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"$verbose", "=", 
-   RowBox[{"<|", 
+  RowBox[{"If", "[", 
+   RowBox[{
     RowBox[{
-     RowBox[{"\"\<msg\>\"", "\[Rule]", "10"}], ",", 
-     RowBox[{"\"\<user\>\"", "\[Rule]", "10"}], ",", 
-     RowBox[{"\"\<core\>\"", "\[Rule]", "10"}]}], "|>"}]}], 
+     RowBox[{"Length", "@", 
+      RowBox[{"Kernels", "[", "]"}]}], "===", "0"}], ",", 
+    RowBox[{"LaunchKernels", "[", "]"}]}], "]"}], 
   ";"}], "\[IndentingNewLine]", 
  RowBox[{"Get", "[", "\"\<ADEOM.m\>\"", "]"}]}], "Input",
  InitializationCell->True,
- CellLabel->"In[18]:=",ExpressionUUID->"38497b31-96da-4df4-b13e-70ef8ba5be39"],
+ CellLabel->"In[6]:=",ExpressionUUID->"38497b31-96da-4df4-b13e-70ef8ba5be39"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -71,7 +72,61 @@ Cell[BoxData[
   Editable->False]], "Print",
  CellLabel->
   "During evaluation of \
-In[18]:=",ExpressionUUID->"7d5ff42e-b54e-424b-9c20-7250247dff82"]
+In[6]:=",ExpressionUUID->"1ec59ea9-1cc4-4dc3-819c-a4516ef8bf54"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "debugf"}]], "Input",
+ CellLabel->"In[5]:=",ExpressionUUID->"29fcf9b9-1af2-4af3-a576-001d8526cfe8"],
+
+Cell[CellGroupData[{
+
+Cell["Global`debugf", "Print", "PrintUsage",
+ CellTags->
+  "Info53748734607-6230407",ExpressionUUID->"c1fb0b0a-3d89-43a4-9b6d-\
+e1aba9704c4e"],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {
+     RowBox[{
+      RowBox[{"Attributes", "[", "debugf", "]"}], "=", 
+      RowBox[{"{", "HoldAll", "}"}]}]},
+    {" "},
+    {GridBox[{
+       {
+        RowBox[{"debugf", "=", "Print"}]}
+      },
+      BaselinePosition->{Baseline, {1, 1}},
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxItemSize->{"Columns" -> {{
+           Scaled[0.999]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+        "RowsIndexed" -> {}}]}
+   },
+   BaselinePosition->{Baseline, {1, 1}},
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}}],
+  Definition[$CellContext`debugf],
+  Editable->False]], "Print",
+ CellTags->
+  "Info53748734607-6230407",ExpressionUUID->"69519af4-e0fa-4768-b990-\
+71e1569e86ea"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["$Context"], "Input",
+ CellLabel->"In[12]:=",ExpressionUUID->"a4a7f7ce-66e3-44d1-b885-c6dcfe29252b"],
+
+Cell[BoxData["\<\"Global`\"\>"], "Output",
+ CellLabel->
+  "Out[12]=",ExpressionUUID->"5e25a279-53f7-4ef6-afa0-f241f86cca14"]
 }, Open  ]]
 }, Open  ]],
 
@@ -85,41 +140,40 @@ Cell[CellGroupData[{
 Cell[BoxData[{
  RowBox[{
   RowBox[{"core`Src`loadSrc", "[", "$PackageDir", "]"}], ";"}], "\n", 
- RowBox[{
+ RowBox[{"core`Utils`paraEval", "[", 
   RowBox[{
    RowBox[{"core`Src`import", "[", 
     RowBox[{
     "\"\<test\>\"", ",", "\"\<test\>\"", ",", "\"\<utils\>\"", ",", 
-     "\"\<NamesCheck.m\>\""}], "]"}], ";"}], "\[IndentingNewLine]"}], "\n", 
- RowBox[{
-  RowBox[{"packages", "=", 
-   RowBox[{"{", 
-    RowBox[{
-    "\"\<ADEOM`\>\"", ",", "\"\<core`Init\>\"", ",", "\"\<core`Debug\>\"", 
-     ",", "\"\<core`Utils\>\"", ",", "\"\<core`Src\>\"", ",", 
-     "\"\<test`utils`NamesCheck\>\""}], "}"}]}], ";"}], "\n", 
- RowBox[{
-  RowBox[{
-   RowBox[{
+     "\"\<NamesCheck.m\>\""}], "]"}], ";", "\[IndentingNewLine]", "\n", 
+   RowBox[{"packages", "=", 
     RowBox[{"{", 
-     RowBox[{"#", ",", 
-      RowBox[{"test`utils`NamesCheck`contextNamesCheck", "@", "#"}]}], "}"}], 
-    "&"}], "/@", "packages"}], ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{"If", "[", 
+     RowBox[{
+     "\"\<ADEOM`\>\"", ",", "\"\<core`Init\>\"", ",", "\"\<core`Debug\>\"", 
+      ",", "\"\<core`Utils\>\"", ",", "\"\<core`Src\>\"", ",", 
+      "\"\<test`utils`NamesCheck\>\""}], "}"}]}], ";", "\n", 
+   RowBox[{"rlist", "=", 
     RowBox[{
-     RowBox[{"#", "===", 
-      RowBox[{"{", "}"}]}], ",", "\"\<Local variables are clear.\>\"", ",", 
-     "#"}], "]"}], "&"}], "[", 
-  RowBox[{"(", 
-   RowBox[{"%", "/.", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"#", ",", 
+        RowBox[{"test`utils`NamesCheck`contextNamesCheck", "@", "#"}]}], 
+       "}"}], "&"}], "/@", "packages"}]}], ";", "\[IndentingNewLine]", 
+   RowBox[{
     RowBox[{
-     RowBox[{"{", 
-      RowBox[{"_", ",", 
-       RowBox[{"{", "}"}]}], "}"}], "\[Rule]", "Nothing"}]}], ")"}], 
-  "]"}]}], "Input",
- CellLabel->"In[31]:=",ExpressionUUID->"f95522b3-7405-4aa6-b10d-d7ec2719bafc"],
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"#", "===", 
+        RowBox[{"{", "}"}]}], ",", "\"\<Local variables are clear.\>\"", ",", 
+       "#"}], "]"}], "&"}], "[", 
+    RowBox[{"(", 
+     RowBox[{"rlist", "/.", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"_", ",", 
+         RowBox[{"{", "}"}]}], "}"}], "\[Rule]", "Nothing"}]}], ")"}], 
+    "]"}]}], "]"}]}], "Input",
+ CellLabel->"In[9]:=",ExpressionUUID->"f95522b3-7405-4aa6-b10d-d7ec2719bafc"],
 
 Cell[CellGroupData[{
 
@@ -145,7 +199,7 @@ ADEOM/test/test/utils/NamesCheck.m\"\>"}],
   Editable->False]], "Print",
  CellLabel->
   "During evaluation of \
-In[31]:=",ExpressionUUID->"dcd1184a-c365-43e0-8256-e9eecaeb4252"],
+In[9]:=",ExpressionUUID->"36d9bf26-f0f2-42d0-a598-9c4c20c68295"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -159,13 +213,13 @@ Cell[BoxData[
   Editable->False]], "Print",
  CellLabel->
   "During evaluation of \
-In[31]:=",ExpressionUUID->"a991d474-3a39-4179-ad42-c7b97f97951a"],
+In[9]:=",ExpressionUUID->"a77887ed-500c-4bd4-a552-51d94a34e1ba"],
 
-Cell[BoxData["\<\"core`Src`filename$31167 is \
+Cell[BoxData["\<\"core`Src`filename$3340 is \
 test/test/utils/NamesCheck.m\"\>"], "Print",
  CellLabel->
   "During evaluation of \
-In[31]:=",ExpressionUUID->"fb2b6c08-5fe8-4acb-b5d5-32cea8f52fb2"],
+In[9]:=",ExpressionUUID->"9312110a-ec59-4977-8918-585065e2a411"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -178,7 +232,7 @@ Cell[BoxData[
   Editable->False]], "Print",
  CellLabel->
   "During evaluation of \
-In[31]:=",ExpressionUUID->"9cc3485c-9ce7-4050-ad27-59bcabaf60ee"],
+In[9]:=",ExpressionUUID->"f09d9802-6f10-486e-8e78-9dab89d03f88"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -191,7 +245,7 @@ Cell[BoxData[
   Editable->False]], "Print",
  CellLabel->
   "During evaluation of \
-In[31]:=",ExpressionUUID->"3270185b-bcc3-40ab-ba02-0bf8a7b37b3b"],
+In[9]:=",ExpressionUUID->"b72a8622-be2b-4234-a433-12ea50dbaa93"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -204,7 +258,7 @@ Cell[BoxData[
   Editable->False]], "Print",
  CellLabel->
   "During evaluation of \
-In[31]:=",ExpressionUUID->"8ea1d0ee-f824-4db1-8105-b7abca27d6e4"],
+In[9]:=",ExpressionUUID->"c7db51dc-0243-4a39-a283-dd5b16180dc5"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -217,13 +271,92 @@ Cell[BoxData[
   Editable->False]], "Print",
  CellLabel->
   "During evaluation of \
-In[31]:=",ExpressionUUID->"660600bc-10a8-4e23-800d-0f973e32c73b"]
+In[9]:=",ExpressionUUID->"145f4510-8993-4438-b84c-5e6d97f39a76"]
 }, Open  ]],
 
-Cell[BoxData["\<\"Local variables are clear.\"\>"], "Output",
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"Local variables are clear.\"\>", ",", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"\<\"core`Src\"\>", ",", 
+      RowBox[{"{", 
+       RowBox[{"\<\"core`Src`src\"\>", ",", "\<\"core`Src`srcList\"\>"}], 
+       "}"}]}], "}"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"\<\"core`Src\"\>", ",", 
+      RowBox[{"{", 
+       RowBox[{"\<\"core`Src`src\"\>", ",", "\<\"core`Src`srcList\"\>"}], 
+       "}"}]}], "}"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"\<\"core`Src\"\>", ",", 
+      RowBox[{"{", 
+       RowBox[{"\<\"core`Src`src\"\>", ",", "\<\"core`Src`srcList\"\>"}], 
+       "}"}]}], "}"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"\<\"core`Src\"\>", ",", 
+      RowBox[{"{", 
+       RowBox[{"\<\"core`Src`src\"\>", ",", "\<\"core`Src`srcList\"\>"}], 
+       "}"}]}], "}"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"\<\"core`Src\"\>", ",", 
+      RowBox[{"{", 
+       RowBox[{"\<\"core`Src`src\"\>", ",", "\<\"core`Src`srcList\"\>"}], 
+       "}"}]}], "}"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"\<\"core`Src\"\>", ",", 
+      RowBox[{"{", 
+       RowBox[{"\<\"core`Src`src\"\>", ",", "\<\"core`Src`srcList\"\>"}], 
+       "}"}]}], "}"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"\<\"core`Src\"\>", ",", 
+      RowBox[{"{", 
+       RowBox[{"\<\"core`Src`src\"\>", ",", "\<\"core`Src`srcList\"\>"}], 
+       "}"}]}], "}"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"\<\"core`Src\"\>", ",", 
+      RowBox[{"{", 
+       RowBox[{"\<\"core`Src`src\"\>", ",", "\<\"core`Src`srcList\"\>"}], 
+       "}"}]}], "}"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"\<\"core`Src\"\>", ",", 
+      RowBox[{"{", 
+       RowBox[{"\<\"core`Src`src\"\>", ",", "\<\"core`Src`srcList\"\>"}], 
+       "}"}]}], "}"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"\<\"core`Src\"\>", ",", 
+      RowBox[{"{", 
+       RowBox[{"\<\"core`Src`src\"\>", ",", "\<\"core`Src`srcList\"\>"}], 
+       "}"}]}], "}"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"\<\"core`Src\"\>", ",", 
+      RowBox[{"{", 
+       RowBox[{"\<\"core`Src`src\"\>", ",", "\<\"core`Src`srcList\"\>"}], 
+       "}"}]}], "}"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"\<\"core`Src\"\>", ",", 
+      RowBox[{"{", 
+       RowBox[{"\<\"core`Src`src\"\>", ",", "\<\"core`Src`srcList\"\>"}], 
+       "}"}]}], "}"}], "}"}]}], "}"}]], "Output",
  CellLabel->
-  "Out[35]=",ExpressionUUID->"c4edcd1a-3707-4ebf-aec3-fd6ad322b12b"]
-}, Open  ]]
+  "Out[10]=",ExpressionUUID->"2aa8a849-d7f8-4088-ab9a-4be0f6bbd7c3"]
+}, Open  ]],
+
+Cell["\<\
+This module Can\[CloseCurlyQuote]t identify shared variable in the computing \
+kernels !\
+\>", "Text",ExpressionUUID->"56c80fa2-18c1-4dc0-99ac-b50ece9e2523"]
 }, Open  ]]
 },
 WindowSize->{808, 841},

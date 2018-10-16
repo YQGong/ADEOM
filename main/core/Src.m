@@ -22,6 +22,7 @@ loadSrc::usage = "loadSrc[]";
 src::usage = "src[]";
 srcList::usage = "srcList[]";
 loadSrc[dir_String,pattern_String:"*.m"]:=(
+  SetSharedVariable[srcList];
   srcList = FileNames[pattern, dir, Infinity];
   SetSharedFunction[src];
   Do[src[i] = ReadString[i], {i, srcList}];

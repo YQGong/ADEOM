@@ -15,7 +15,7 @@ debug["begin of ", $Context, {"msg",4}];
         StringMatchQ[tail, RegularExpression["[0-9]*"]], False]
     ];
 
-`Private`ExistUsageQ[name_String] :=StringQ[ToExpression[name <> "::usage"]];
+`Private`ExistUsageQ[name_String] :=Head@ToExpression[name <> "::usage"]=!=MessageName;
 
 `Private`filterFunctions = If[
   StringTake[#, -1] === "$" || `Private`moduleVariableQ[#] || `Private`ExistUsageQ[#], Nothing, #] &;
